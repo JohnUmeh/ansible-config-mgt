@@ -24,6 +24,7 @@
       apt:
         name: wireshark
         state: latest
+
 - name: Creating folder and file
   hosts: lb
   remote_user: ubuntu
@@ -35,9 +36,6 @@
           path: "/home/code"
           state: mkdir
 
-    - name: create file
-      file:
-         path: "/home/code/code.txt"
-        state: touch
+    
 
 
