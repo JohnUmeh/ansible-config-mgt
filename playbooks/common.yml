@@ -25,17 +25,4 @@
         name: wireshark
         state: latest
 
-- name: Creating folder and file
-  hosts: lb
-  remote_user: ubuntu
-  become: yes
-  become_user: root
-  tasks:
-    - name: create folder
-      folder:
-          path: "/home/code"
-          state: mkdir
-
-    
-
 
