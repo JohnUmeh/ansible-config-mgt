@@ -1,0 +1,6 @@
+---
+- hosts: all
+- import_playbook: /home/ubuntu/static-assignments/common.yml
+
+- hosts: uat-webservers
+- import_playbook: /home/ubuntu/static-assignments/uat-webservers.yml
