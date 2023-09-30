@@ -1,3 +1,3 @@
 # ansible-config-mgt
 
-ansible .
+ansible 
