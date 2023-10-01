@@ -14,7 +14,7 @@
 - name: clone a repo
   become: true
   ansible.builtin.git:
-    repo:https://github.com/JohnUmeh/Project7-Tooling.git
+    repo: https://github.com/JohnUmeh/Project7-Tooling.git
     dest: /var/www/html
     force: yes
 
