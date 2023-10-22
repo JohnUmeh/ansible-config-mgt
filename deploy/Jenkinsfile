@@ -15,7 +15,7 @@ pipeline{
 
       stage('checkout SCM') {
           steps {
-             git branch: 'main', url: 'https://github.com/JohnUmeh/ansible-config-mgt.git'
+             git branch: 'packageDeployClean', url: 'https://github.com/JohnUmeh/ansible-config-mgt.git'
           }
       }
 
