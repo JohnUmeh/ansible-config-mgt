@@ -9,6 +9,7 @@ pipeline {
         }
       }
     }
+<<<<<<< HEAD
 
     stage('Test') {
       steps {
@@ -41,5 +42,7 @@ pipeline {
         }
       }
     }
+=======
+>>>>>>> parent of 3265b12 (add test stage)
     }
 }
