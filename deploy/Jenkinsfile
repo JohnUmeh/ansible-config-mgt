@@ -1,51 +1,13 @@
-pipeline{
-  agent any
-  environment{
-      ANSIBLE_CONFIG="${WORKSPACE}/deploy/ansible.cfg"
-  }
-
-  parameters {
-      string(name: 'inventory', defaultValue: 'dev',  description: 'This is the inventory file for the environment to deploy configuration')
-    }
+pipeline {
+    agent any
 
   stages {
-      stage("Initial cleanup"){
-          steps {
-            dir("${WORKSPACE}") {
-              deleteDir()
-            }
-          }
+    stage('Build') {
+      steps {
+        script {
+          sh 'echo "Building Stage"'
+        }
       }
-<<<<<<< HEAD
-
-      stage('checkout SCM') {
-          steps {
-             git branch: 'main', url: 'https://github.com/JohnUmeh/ansible-config-mgt.git'
-          }
-      }
-
-      stage ('Prepare Ansible for execution') {
-          steps {
-            sh 'echo {$WORKSPACE}'
-            sh 'sed -i "3 a roles_path=${WORKSPACE}/roles" ${WORKSPACE}/deploy/ansible.cfg'
-          }
-      }
-
-      stage('Run Ansible playbook') {
-          steps {
-             ansiblePlaybook become: true, colorized: true, credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/${inventory}', playbook: 'playbooks/site.yml'
-          }
-      }
-
-      stage('Clean workspace after build'){
-          steps {
-            cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenUnstable: true, deleteDirs: true)
-          }
-      }
-  }
-}
-=======
     }
     }
 }
->>>>>>> parent of 3265b12 (add test stage)
